@@ -180,52 +180,6 @@ class Lesson1Page extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      height: 180,
-                      width: 180,
-                      margin: const EdgeInsets.all(12),
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 5),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      height: 180,
-                      width: 180,
-                      margin: const EdgeInsets.all(12),
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 5),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
           ],
         ),
       ),
