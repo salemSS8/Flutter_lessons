@@ -17,7 +17,15 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF2196F3),
         title: const Center(
-          child: Text('الصفحة الرئيسية', style: TextStyle(color: Colors.white)),
+          child: Text(
+            'الصفحة الرئيسية',
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'Tasees',
+              fontSize: 26,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ),
       body: Container(

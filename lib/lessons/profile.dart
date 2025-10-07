@@ -13,7 +13,7 @@ class Profile extends StatelessWidget {
         title: const Text(
           'الملف الشخصي',
           style: TextStyle(
-            fontFamily: 'Times New Roman',
+            fontFamily: 'Tasees',
             fontSize: 24,
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -74,9 +74,9 @@ class Profile extends StatelessWidget {
             const Text(
               'روابط التواصل الاجتماعي',
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'Cursive',
+                fontFamily: 'Tasees',
               ),
             ),
             const SizedBox(height: 10),
@@ -96,9 +96,9 @@ class Profile extends StatelessWidget {
             const Text(
               'المهارات',
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'Cursive',
+                fontFamily: 'Tasees',
               ),
             ),
             const SizedBox(height: 8),

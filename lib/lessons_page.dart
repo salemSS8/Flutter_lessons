@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'home_page.dart';
 import 'lessons/lesson1.dart';
+import 'lessons/lesson2_listview.dart';
+import 'lessons/lesson4_gridview.dart';
 import 'lessons/profile.dart';
 
 class LessonsPage extends StatelessWidget {
@@ -16,8 +18,8 @@ class LessonsPage extends StatelessWidget {
           child: Text(
             'الدروس',
             style: TextStyle(
-              fontFamily: 'Times New Roman',
-              fontSize: 26,
+              fontFamily: 'Tasees',
+              fontSize: 35,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
@@ -54,6 +56,16 @@ class LessonsPage extends StatelessWidget {
                 context,
                 'Lesson 2: Build a profile page',
                 const Profile(),
+              ),
+              lessonCard(
+                context,
+                'Lesson 3: Build a list view page',
+                ListViewPage(),
+              ),
+              lessonCard(
+                context,
+                'Lesson 4: Build a grid view page',
+                gridviewpage(),
               ),
             ],
           ),
