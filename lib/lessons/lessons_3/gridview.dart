@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../lessons_page.dart';
+import '../../lessons_page.dart';
 
 class gridviewpage extends StatelessWidget {
   @override
@@ -24,7 +24,7 @@ class gridviewpage extends StatelessWidget {
           onPressed: () {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const LessonsPage()),
+              MaterialPageRoute(builder: (context) =>  LessonsPage()),
             );
           },
         ),

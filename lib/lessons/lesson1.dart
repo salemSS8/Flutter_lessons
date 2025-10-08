@@ -27,7 +27,7 @@ class Lesson1Page extends StatelessWidget {
           onPressed: () {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const LessonsPage()),
+              MaterialPageRoute(builder: (context) =>  LessonsPage()),
             );
           },
         ),

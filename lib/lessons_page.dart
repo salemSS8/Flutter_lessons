@@ -1,20 +1,29 @@
+import 'package:first_project/lessons/lessons_3/bottuns.dart';
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
 import 'lessons/lesson1.dart';
-import 'lessons/lesson2_listview.dart';
-import 'lessons/lesson4_gridview.dart';
-import 'lessons/profile.dart';
+import 'lessons/lessons_3/listview.dart';
+import 'lessons/lessons_3/gridview.dart';
+import 'lessons/lessone_2_profile.dart';
 
+// ignore: must_be_immutable
 class LessonsPage extends StatelessWidget {
-  const LessonsPage({super.key});
+  LessonsPage({super.key});
+
+  List<Map> lessons = [
+    {'title': 'الدرس الأول', 'page': Lesson1Page()},
+    {'title': 'الدرس الثاني', 'page': const Profile()},
+    {'title': 'الدرس الثالث', 'page': ListViewPage()},
+    {'title': 'الدرس الرابع', 'page': gridviewpage()},
+    {'title': 'الدرس الخامس', 'page': const BottunsPage()},
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF2196F3),
-        title: const Center(
+        backgroundColor: Colors.transparent,
+        title: Center(
           child: Text(
             'الدروس',
             style: TextStyle(
@@ -26,75 +35,43 @@ class LessonsPage extends StatelessWidget {
           ),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const HomePage()),
-            );
+            Navigator.pop(context);
           },
         ),
       ),
-      body: Container(
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFF2196F3), Color(0xFF9C27B0)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              lessonCard(
-                context,
-                'Lesson 1: Building cards by column and row',
-                const Lesson1Page(),
+      body: ListView(
+        children: [
+          ...List.generate(lessons.length, (index) {
+            return Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
               ),
-              lessonCard(
-                context,
-                'Lesson 2: Build a profile page',
-                const Profile(),
+              margin: const EdgeInsets.all(16),
+              child: ListTile(
+                title: Text(
+                  textAlign: TextAlign.end,
+                  lessons[index]['title'],
+                  style: const TextStyle(
+                    fontFamily: 'Tasees',
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                leading: const Icon(Icons.arrow_back),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => lessons[index]['page'],
+                    ),
+                  );
+                },
               ),
-              lessonCard(
-                context,
-                'Lesson 3: Build a list view page',
-                ListViewPage(),
-              ),
-              lessonCard(
-                context,
-                'Lesson 4: Build a grid view page',
-                gridviewpage(),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  // Widget لبناء البطاقة
-  Widget lessonCard(BuildContext context, String title, Widget destination) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => destination),
-        );
-      },
-      child: Container(
-        width: double.infinity,
-        margin: const EdgeInsets.all(20),
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.8),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Text(
-          title,
-          style: const TextStyle(fontSize: 24, color: Colors.blueAccent),
-        ),
+            );
+          }),
+        ],
       ),
     );
   }

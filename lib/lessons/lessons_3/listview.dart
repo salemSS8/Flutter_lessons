@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../lessons_page.dart';
+import '../../lessons_page.dart';
 
 class ListViewPage extends StatelessWidget {
   @override
@@ -24,25 +24,28 @@ class ListViewPage extends StatelessWidget {
           onPressed: () {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const LessonsPage()),
+              MaterialPageRoute(builder: (context) => LessonsPage()),
             );
           },
         ),
       ),
-      body: ListView.separated(
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: Icon(Icons.menu),
-            title: Text('menu $index'),
-            iconColor: Colors.teal,
-            textColor: Colors.amber,
-            tileColor: Colors.blue,
-          );
-        },
-        separatorBuilder: (context, index) {
-          return Divider(color: Colors.black);
-        },
-        itemCount: 10,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView.separated(
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Icon(Icons.menu),
+              title: Text('menu $index'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
+              tileColor: Colors.blue,
+            );
+          },
+          separatorBuilder: (context, index) {
+            return Divider(color: Colors.black);
+          },
+          itemCount: 10,
+        ),
       ),
     );
   }
