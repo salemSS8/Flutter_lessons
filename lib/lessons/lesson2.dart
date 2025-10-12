@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../lessons_page.dart';
+import '../lessons_page.dart';
 
 class ListViewPage extends StatelessWidget {
+  const ListViewPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,27 +24,27 @@ class ListViewPage extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) =>  LessonsPage()),
+            );
           },
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView.separated(
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Icon(Icons.menu),
-              title: Text('menu $index'),
-              iconColor: Colors.white,
-              textColor: Colors.white,
-              tileColor: Colors.blue,
-            );
-          },
-          separatorBuilder: (context, index) {
-            return Divider(color: Colors.black);
-          },
-          itemCount: 10,
-        ),
+      body: ListView.separated(
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Icon(Icons.menu),
+            title: Text('menu $index'),
+            iconColor: Colors.teal,
+            textColor: Colors.amber,
+            tileColor: Colors.blue,
+          );
+        },
+        separatorBuilder: (context, index) {
+          return Divider(color: Colors.black);
+        },
+        itemCount: 10,
       ),
     );
   }

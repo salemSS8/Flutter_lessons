@@ -5,6 +5,15 @@ class BottunsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.blueGrey,
+      appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
+        title: Center(
+          child: Text('الدرس الخامس', style: TextStyle(color: Colors.white)),
+        ),
+        iconTheme: IconThemeData(color: Colors.white),
+      ),
+    );
   }
 }

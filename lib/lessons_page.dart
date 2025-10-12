@@ -1,6 +1,9 @@
 import 'package:first_project/lessons/lessons_3/bottuns.dart';
 import 'package:flutter/material.dart';
 import 'lessons/lesson1.dart';
+import 'lessons/lesson_6.dart';
+import 'lessons/lesson_7.dart';
+import 'lessons/lesson_8.dart';
 import 'lessons/lessons_3/listview.dart';
 import 'lessons/lessons_3/gridview.dart';
 import 'lessons/lessone_2_profile.dart';
@@ -15,6 +18,9 @@ class LessonsPage extends StatelessWidget {
     {'title': 'الدرس الثالث', 'page': ListViewPage()},
     {'title': 'الدرس الرابع', 'page': gridviewpage()},
     {'title': 'الدرس الخامس', 'page': const BottunsPage()},
+    {'title': 'الدرس السادس', 'page': const cardLesonPage()},
+    {'title': 'الدرس السابع', 'page': const lesson_7()},
+    {'title': 'الدرس الثامن', 'page': const rotateboxpage()},
   ];
 
   @override

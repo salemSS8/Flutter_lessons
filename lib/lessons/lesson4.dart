@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../lessons_page.dart';
+import '../lessons_page.dart';
 
 class gridviewpage extends StatelessWidget {
+  const gridviewpage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,10 @@ class gridviewpage extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) =>  LessonsPage()),
+            );
           },
         ),
       ),

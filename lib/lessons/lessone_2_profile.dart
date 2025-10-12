@@ -56,7 +56,7 @@ class Profile extends StatelessWidget {
 
           //profile details
           SizedBox(height: 20),
-          ...List.generate(4, (index) {
+          ...List.generate(3, (index) {
             return Card(
               margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: ListTile(
@@ -91,29 +91,56 @@ class Profile extends StatelessWidget {
 
           // Skills and Experience
           SizedBox(height: 20),
-          ListView.builder(
-            itemCount: 3,
-            itemBuilder: (context, index) {
-              return Card(
-                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                child: ListTile(
-                  leading: Icon(Icons.star, color: Colors.blueGrey),
-                  title: Text(
-                    index == 0
-                        ? 'Skill: Flutter Development'
-                        : index == 1
-                        ? 'Experience: 3 years in mobile app development'
-                        : 'Skill: UI/UX Design',
-                    style: TextStyle(
-                      fontFamily: 'Tasees',
-                      fontSize: 18,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+          Column(
+            children: [
+              Text(
+                "Skills and Experience",
+                style: TextStyle(
+                  fontFamily: 'Tasees',
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
-              );
-            },
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      icon: FaIcon(
+                        FontAwesomeIcons.html5,
+                        color: Colors.orange,
+                      ),
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      icon: FaIcon(
+                        FontAwesomeIcons.css3Alt,
+                        color: Colors.blue,
+                      ),
+                      onPressed: () {},
+                    ),
+
+                    IconButton(
+                      icon: FaIcon(FontAwesomeIcons.js, color: Colors.yellow),
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      icon: FaIcon(FontAwesomeIcons.react, color: Colors.cyan),
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      icon: FaIcon(
+                        FontAwesomeIcons.nodeJs,
+                        color: Colors.green,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
           // end of Skills and Experience
 
