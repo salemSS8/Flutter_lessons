@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Tasks/Task_one/Home.dart';
+import 'Tasks/tasks.dart';
 import 'lessons/lessone_2_profile.dart';
 import 'lessons_page.dart'; // صفحة الدروس
 
@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
       {
         'icon': Icons.play_lesson,
         'title': 'الواجبات',
-        'page': const Home_Page(),
+        'page': const Taskspage(),
       },
     ];
 

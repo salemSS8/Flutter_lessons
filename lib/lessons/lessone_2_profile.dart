@@ -56,37 +56,121 @@ class Profile extends StatelessWidget {
 
           //profile details
           SizedBox(height: 20),
-          ...List.generate(3, (index) {
-            return Card(
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: ListTile(
-                leading: Icon(Icons.person, color: Colors.blueGrey),
-                title: Row(
+          Column(
+            children: [
+              Text(
+                "Profile Details",
+                style: TextStyle(
+                  fontFamily: 'Tasees',
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 12),
+              Container(
+                padding: EdgeInsets.all(12),
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
                   children: [
-                    Text(
-                      'name :',
-                      style: TextStyle(
-                        fontFamily: 'Tasees',
-                        fontSize: 18,
-                        color: Colors.blueGrey,
-                        fontWeight: FontWeight.bold,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.blueAccent),
+                          color: Colors.blue[50],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Row(
+                            children: [
+                              Icon(Icons.person, color: Colors.blueGrey),
+                              SizedBox(width: 10),
+                              Text(
+                                'Name: salem bashnddof',
+                                style: TextStyle(
+                                  fontFamily: 'Tasees',
+                                  fontSize: 18,
+                                  color: Colors.blueAccent,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-                    SizedBox(width: 10),
-                    Text(
-                      "salem bashnddof",
-                      style: TextStyle(
-                        fontFamily: 'Tasees',
-                        fontSize: 18,
-                        color: Colors.blueGrey,
-                        fontWeight: FontWeight.bold,
+                    SizedBox(height: 10),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.blueAccent),
+                          color: Colors.blue[50],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Row(
+                            children: [
+                              Icon(Icons.phone, color: Colors.blueGrey),
+                              SizedBox(width: 10),
+                              Text(
+                                'Phone: +967778928541',
+                                style: TextStyle(
+                                  fontFamily: 'Tasees',
+                                  fontSize: 18,
+                                  color: Colors.blueAccent,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.blueAccent),
+                          color: Colors.blue[50],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 5),
+                          child: Row(
+                            children: [
+                              Icon(Icons.email, color: Colors.blueGrey),
+                              SizedBox(width: 10),
+                              Text(
+                                'Email: salmebashndoof@gmail.com',
+                                style: TextStyle(
+                                  fontFamily: 'Tasees',
+                                  fontSize: 18,
+                                  color: Colors.blueAccent,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-            );
-          }),
+            ],
+          ),
+
           // End of profile details
 
           // Skills and Experience
