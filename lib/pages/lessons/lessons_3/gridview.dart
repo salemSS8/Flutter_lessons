@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../lessons_page.dart';
+import '../lessons_page.dart';
 
 class gridviewpage extends StatelessWidget {
   @override
@@ -36,7 +36,7 @@ class gridviewpage extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        child: Text('data'),
+        child: Text('salem'),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Home.dart';
 import 'aboutas.dart';
 import 'contactas.dart';
+import 'sttings.dart';
 
 class Getstrated extends StatelessWidget {
   const Getstrated({super.key});
@@ -21,9 +22,9 @@ class Getstrated extends StatelessWidget {
         'page': const Contactaspage(),
       },
       {
-        'icon': Icons.play_lesson,
-        'title': 'الواجبات',
-        'page': const Homepage(),
+        'icon': Icons.settings,
+        'title': 'sttings',
+        'page': const sttings_page(),
       },
     ];
     return Scaffold(
@@ -32,7 +33,10 @@ class Getstrated extends StatelessWidget {
         backgroundColor: Colors.blueGrey,
         iconTheme: IconThemeData(color: Colors.white),
         title: Center(
-          child: Text('Get Started', style: TextStyle(color: Colors.white)),
+          child: Text(
+            'Get Start',
+            style: TextStyle(color: Colors.white, fontFamily: 'Tasees'),
+          ),
         ),
       ),
       body: Padding(
@@ -47,24 +51,32 @@ class Getstrated extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             final item = items[index];
-            return Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(item['icon'], size: 50, color: Colors.blueGrey),
-                  SizedBox(height: 16),
-                  Text(
-                    item['title'],
-                    style: TextStyle(
-                      fontFamily: 'Tasees',
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => item['page']),
+                );
+              },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(item['icon'], size: 50, color: Colors.blueGrey),
+                    SizedBox(height: 16),
+                    Text(
+                      item['title'],
+                      style: TextStyle(
+                        fontFamily: 'Tasees',
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           },

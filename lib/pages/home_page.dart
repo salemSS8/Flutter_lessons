@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Tasks/tasks.dart';
 import 'lessons/lessone_2_profile.dart';
-import 'lessons_page.dart'; // صفحة الدروس
+import 'lessons/lessons_page.dart'; // صفحة الدروس
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,8 +11,6 @@ class HomePage extends StatelessWidget {
     // قائمة العناصر (كل عنصر فيه أيقونة، عنوان، والصفحة الخاصة به)
     final List<Map<String, dynamic>> items = [
       {'icon': Icons.book, 'title': 'الدروس', 'page': LessonsPage()},
-      {'icon': Icons.person, 'title': 'الملف الشخصي', 'page': const Profile()},
-      {'icon': Icons.settings, 'title': 'الإعدادات', 'page': const Profile()},
       {
         'icon': Icons.play_lesson,
         'title': 'الواجبات',
@@ -23,22 +21,30 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         title: const Center(
           child: Text(
             'الصفحة الرئيسية',
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.blueGrey,
               fontFamily: 'Tasees',
               fontSize: 26,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
+        leading: IconButton(
+          icon: const Icon(Icons.settings, color: Colors.blueGrey),
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('settings button pressed')),
+            );
+          },
+        ),
       ),
       body: Container(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.only(top: 25.0, left: 16.0, right: 16.0),
           child: GridView.builder(
             itemCount: items.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -85,17 +91,29 @@ class HomePage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        selectedItemColor: Colors.blueAccent,
+        currentIndex: 2,
+        selectedItemColor: Colors.blueGrey,
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
-        onTap: (index) {},
+        onTap: (index) {
+          // التعامل مع التنقل بين الصفحات بناءً على الفهرس المحدد
+          if (index == 0) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Profile()),
+            );
+          } else if (index == 1) {
+            // صفحة البحث غير موجودة حالياً، يمكن إضافة صفحة بحث هنا
+          } else if (index == 2) {
+            // نحن بالفعل في الصفحة الرئيسية، لا حاجة للتنقل
+          }
+        },
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            activeIcon: Icon(Icons.home),
-            label: 'الرئيسية',
+            icon: Icon(Icons.person_outline),
+            activeIcon: Icon(Icons.person),
+            label: 'حسابي',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search_outlined),
@@ -103,9 +121,9 @@ class HomePage extends StatelessWidget {
             label: 'بحث',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            activeIcon: Icon(Icons.person),
-            label: 'حسابي',
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
+            label: 'الرئيسية',
           ),
         ],
       ),

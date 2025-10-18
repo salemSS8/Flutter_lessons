@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../lessons_page.dart';
+import 'lessons_page.dart';
 
 // صفحات الدروس (تقدر تعدل المحتوى فيها لاحقًا)
 class Lesson1Page extends StatelessWidget {
