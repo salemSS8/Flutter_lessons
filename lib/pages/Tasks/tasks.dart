@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../lessons/lesson1.dart';
 import '../lessons/lessone_2_profile.dart';
-import 'Task_one/getstrated.dart';
+import 'Task_fore/getstrated.dart';
+import 'Task_three/Home_Page.dart';
 
 class Taskspage extends StatelessWidget {
   const Taskspage({super.key});
@@ -10,11 +11,10 @@ class Taskspage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map> lessons = [
-      {'title': 'الواجب الأول الكونينارات', 'page': Lesson1Page()},
+      {'title': 'الواجب الأول الكونتينارات', 'page': Lesson1Page()},
       {'title': 'الواجب الثاني الملف الشخصي', 'page': Profile()},
-      {'title': 'الواجب الثالث', 'page': Taskspage()},
-      {'title': 'الواجب الرابع', 'page': Taskspage()},
-      {'title': 'الواجب الخامس المشترك', 'page': Getstrated()},
+      {'title': 'الواجب الثالث (خمسة مواضيع)', 'page': Home_page_Task_three()},
+      {'title': 'الواجب الرابع المشترك', 'page': Getstrated()},
     ];
     return Scaffold(
       backgroundColor: Colors.blueGrey,

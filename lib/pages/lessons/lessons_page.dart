@@ -1,9 +1,11 @@
 import 'package:first_project/pages/lessons/lessons_3/bottuns.dart';
 import 'package:flutter/material.dart';
 import 'lesson1.dart';
+import 'lesson_10.dart';
 import 'lesson_6_card.dart';
 import 'lesson_7_cpaser.dart';
 import 'lesson_8_rotatebox.dart';
+import 'lesson_9.dart';
 import 'lessons_3/lesson_3.dart';
 import 'lessons_3/gridview.dart';
 import 'lessone_2_profile.dart';
@@ -21,6 +23,8 @@ class LessonsPage extends StatelessWidget {
     {'title': 'الدرس السادس', 'page': cardLesonPage()},
     {'title': 'الدرس السابع', 'page': lesson_7()},
     {'title': 'الدرس الثامن', 'page': rotateboxpage()},
+    {'title': 'الدرس التاسع', 'page': textspanpage()},
+    {'title': 'الدرس العاشر', 'page': opicitypage()},
   ];
 
   @override
